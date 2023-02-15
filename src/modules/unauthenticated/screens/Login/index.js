@@ -39,13 +39,14 @@ export const LoginScreen = () => {
           <Image src="/img/logo.svg" alt="BookClub Logo" w="160px" h="48px" />
           <Text.ScreenTitle mt="48px">Login</Text.ScreenTitle>
           <Input
+            type="email"
             id="email"
             name="email"
             value={values.email}
-            mt="24px"
-            placeholder="email@exemplo.com"
             onChange={handleChange}
             error={errors.email}
+            mt="24px"
+            placeholder="email@exemplo.com"
           />
           <Input.Password
             id="password"
@@ -63,7 +64,9 @@ export const LoginScreen = () => {
             alignItems="flex-end"
             justifyContent="flex-end"
           >
-            <Link>Esqueceu sua senha?</Link>
+            <Link onClick={() => navigate('/forgot-password')}>
+              Esqueceu sua senha?
+            </Link>
           </Flex>
 
           <Button onClick={handleSubmit} mt="24px">

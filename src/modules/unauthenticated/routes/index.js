@@ -11,6 +11,10 @@ export const unauthRoutes = [
     element: <LoginScreen />
   },
   {
+    path: '/login',
+    element: <LoginScreen />
+  },
+  {
     path: '/signup',
     element: <RegisterScreen />
   },
