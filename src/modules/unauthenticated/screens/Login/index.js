@@ -6,7 +6,6 @@ import * as Yup from 'yup'
 import { useMutation } from 'react-query'
 import { loginCall } from 'services/api/requests'
 import { saveItem } from 'services/storage'
-// import { saveItem } from 'services/storage'
 
 export const LoginScreen = () => {
   const navigate = useNavigate()
