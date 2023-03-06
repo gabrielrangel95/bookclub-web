@@ -8,7 +8,7 @@ Text.ScreenTitle = ({ children, ...props }) => (
   <ChakraText
     color="brand.black"
     fontWeight="extrabold"
-    fontSize={'20px'}
+    fontSize={['16px', '20px']}
     {...props}
   >
     {children}

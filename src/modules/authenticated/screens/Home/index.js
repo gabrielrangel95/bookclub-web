@@ -6,9 +6,9 @@ export const HomeScreen = () => {
     <Flex flexDir="column">
       <NavBar />
       <Flex
-        mt="48px"
+        mt={['24px', '48px']}
         w="100%"
-        h="200px"
+        h={['72px', '200px']}
         paddingX={['24px', '48px', '80px', '112px']}
       >
         <Flex
@@ -16,9 +16,9 @@ export const HomeScreen = () => {
           h="100%"
           backgroundImage="url('/img/banner.svg')"
           backgroundSize="cover"
-          backgroundPosition="center"
+          backgroundPosition={['start', 'center']}
           backgroundRepeat="no-repeat"
-          borderRadius="24px"
+          borderRadius={['8px', '24px']}
         />
       </Flex>
       <BookList />
