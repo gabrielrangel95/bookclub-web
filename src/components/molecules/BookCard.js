@@ -1,13 +1,18 @@
 import { Text } from 'components/atoms'
 import { Flex } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
-export const BookCard = ({ cover_url, name, author }) => {
+export const BookCard = ({ id, cover_url, name, author }) => {
+  const navigate = useNavigate()
+
   return (
     <Flex
       mr="16px"
       flexDir="column"
       alignItems="center"
       justifyContent="center"
+      cursor="pointer"
+      onClick={() => navigate(`/book-detail/${id}`)}
     >
       <Flex
         backgroundImage={`url(${cover_url})`}
