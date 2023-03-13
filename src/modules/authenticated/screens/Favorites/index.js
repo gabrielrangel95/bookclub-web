@@ -5,7 +5,6 @@ import { getFavorites } from 'services/api/requests'
 
 export const FavoritesScreen = () => {
   const { data } = useQuery('getFavorites', getFavorites)
-  console.log({ data })
 
   return (
     <Flex flexDir="column">

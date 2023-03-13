@@ -3,8 +3,6 @@ import { BookCard } from 'components/molecules'
 import { Text, Loader, EmptyMessage } from 'components/atoms'
 
 export const BookList = ({ title, data, isLoading }) => {
-  console.log({ data })
-
   return (
     <Flex
       flexDir="column"
