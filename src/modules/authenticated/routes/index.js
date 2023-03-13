@@ -2,7 +2,8 @@ import {
   HomeScreen,
   BookDetailScreen,
   FavoritesScreen,
-  SearchScreen
+  SearchScreen,
+  AuthorDetailScreen
 } from '../screens'
 
 export const authRoutes = [
@@ -13,6 +14,10 @@ export const authRoutes = [
   {
     path: '/book-detail/:id',
     element: <BookDetailScreen />
+  },
+  {
+    path: '/author-detail/:id',
+    element: <AuthorDetailScreen />
   },
   {
     path: '/favorites',
