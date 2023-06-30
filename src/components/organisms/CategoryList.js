@@ -7,14 +7,21 @@ import { getCategories, getBooksByCategory } from 'services/api/requests'
 
 export const CategoryList = ({ title, categoryId }) => {
   const [selected, setSelected] = useState(categoryId)
+
   const { data } = useQuery('categories', getCategories)
   const {
     data: bookQuery,
     refetch,
     isLoading
-  } = useQuery(['booksById', selected], () => getBooksByCategory(selected), {
-    enabled: !!selected
-  })
+  } = useQuery(
+    [`booksById-${selected}`, selected],
+    () => getBooksByCategory(selected),
+    {
+      enabled: !!selected,
+      refetchOnWindowFocus: true,
+      refetchOnMount: true
+    }
+  )
 
   useEffect(() => {
     if (!selected && data?.data) {
@@ -23,7 +30,10 @@ export const CategoryList = ({ title, categoryId }) => {
   }, [data])
 
   useEffect(() => {
-    refetch()
+    if (categoryId) {
+      setSelected(categoryId)
+      refetch()
+    }
   }, [categoryId])
 
   return (
